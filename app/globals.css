@@ -2,26 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 220 33% 98%;
+    --foreground: 220 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 10%;
+
+    --primary: 220 90% 50%;
+    --primary-foreground: 220 10% 98%;
+
+    --secondary: 200 80% 60%;
+    --secondary-foreground: 220 10% 10%;
+
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 280 70% 60%;
+    --accent-foreground: 220 10% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 80%;
+    --input: 220 20% 80%;
+    --ring: 220 90% 50%;
+
+    --radius: 0.5rem;
+
+    --agent-research: 200 80% 60%;
+    --agent-outline: 160 70% 50%;
+    --agent-writing: 120 60% 50%;
+    --agent-editing: 40 90% 60%;
+    --agent-seo: 320 80% 60%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 220 10% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 220 10% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 10% 98%;
+
+    --primary: 220 90% 50%;
+    --primary-foreground: 220 10% 98%;
+
+    --secondary: 200 80% 40%;
+    --secondary-foreground: 220 10% 98%;
+
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 280 70% 40%;
+    --accent-foreground: 220 10% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 10% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 220 90% 50%;
+
+    --agent-research: 200 80% 40%;
+    --agent-outline: 160 70% 30%;
+    --agent-writing: 120 60% 30%;
+    --agent-editing: 40 90% 40%;
+    --agent-seo: 320 80% 40%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.agent-icon {
+  @apply w-12 h-12 rounded-full flex items-center justify-center text-white;
+}
+
+.agent-research {
+  @apply bg-[hsl(var(--agent-research))];
+}
+
+.agent-outline {
+  @apply bg-[hsl(var(--agent-outline))];
+}
+
+.agent-writing {
+  @apply bg-[hsl(var(--agent-writing))];
+}
+
+.agent-editing {
+  @apply bg-[hsl(var(--agent-editing))];
+}
+
+.agent-seo {
+  @apply bg-[hsl(var(--agent-seo))];
 }
